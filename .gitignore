@@ -1,0 +1,12 @@
+# Keil 编译产物与用户界面状态
+Obj/
+Objects/
+Listings/
+*.uvguix.*
+*.uvgui.*
+*.bak
+*.dep
+JLinkLog.txt
+build.log
+monitor*.log
+__pycache__/
