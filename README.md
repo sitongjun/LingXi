@@ -23,6 +23,7 @@
 | 路径 | 内容 |
 |---|---|
 | `docs/接口设计.md` | 接线、引脚、串口帧协议、能力清单格式 |
+| `docs/开发进度与继续指南.md` | 当前进度、编译下载步骤、下一步计划 |
 | `stm32/LingXi_STM32` | STM32 家居主控 Keil 工程 |
 | `stm32/LingXi_BoardTest` | 板级引脚验证程序（LED、蜂鸣器、按键、USART3 自环） |
 | `tools/stm32_isp.py` | 串口一键下载 / 读芯片信息 / 监视调试输出 |
@@ -32,15 +33,16 @@
 ## 进度
 
 - [x] M1 打通链路：语音“打开客厅灯”→ 大模型调用 MCP 工具 → 串口 → STM32 点亮 DS0
-- [ ] M2 STM32 功能完善：3.5 寸彩屏状态面板、温湿度采集、超阈值报警、FreeRTOS
+- [x] M2 STM32 功能完善：3.5 寸彩屏状态面板、阈值语音设置、超阈值自动报警（DHT11 待接入）
+- [ ] M2+ FreeRTOS、触摸、更多外设
 - [ ] M3 创新功能：大模型生成规则、STM32 本地执行、多级容灾
 - [ ] M4 数据层：MQTT / EMQX / MySQL / 看板
 
 ## 编译与下载（STM32）
 
 ```powershell
-D:\keil5\UV4\UV4.exe -b stm32\LingXi_STM32\Template.uvprojx
-python tools\stm32_isp.py COM7 flash stm32\LingXi_STM32\Obj\Template.hex
+python tools\build_stm32.py stm32\LingXi_STM32     # ARM GCC 编译（Keil 评估版有 32KB 限制）
+python tools\stm32_isp.py COM7 flash stm32\LingXi_STM32\build_gcc\LingXi.hex
 ```
 
 STM32 源文件为 UTF-8 编码，用 Keil 打开前请设置 Edit → Configuration → Editor → Encoding 为 UTF-8。
