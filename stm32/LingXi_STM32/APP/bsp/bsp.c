@@ -69,6 +69,21 @@ u32 millis(void)
 	return g_ms;
 }
 
+/* 微秒时间戳：TIM2 计数器以 1MHz 计数，每 1000 溢出一次 */
+u32 micros(void)
+{
+	u32 ms, cnt;
+	do
+	{
+		ms = g_ms;
+		cnt = TIM2->CNT;
+	} while (ms != g_ms);
+	/* 计数已回绕但溢出中断尚未执行时补上 1ms */
+	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET && cnt < 500)
+		ms++;
+	return ms * 1000 + cnt;
+}
+
 void bsp_init(void)
 {
 	GPIO_InitTypeDef gpio;

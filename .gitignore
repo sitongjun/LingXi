@@ -10,3 +10,4 @@ JLinkLog.txt
 build.log
 monitor*.log
 __pycache__/
+build_gcc/

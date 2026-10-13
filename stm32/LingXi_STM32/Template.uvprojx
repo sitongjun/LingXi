@@ -335,10 +335,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
+              <MiscControls>--no_multibyte_chars</MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F10X_HD</Define>
               <Undefine></Undefine>
-              <IncludePath>.\User;.\Libraries\CMSIS;.\Libraries\STM32F10x_StdPeriph_Driver\inc;.\APP\bsp;.\APP\link;.\APP\home;.\Public;.\APP\lcd</IncludePath>
+              <IncludePath>.\User;.\Libraries\CMSIS;.\Libraries\STM32F10x_StdPeriph_Driver\inc;.\APP\bsp;.\APP\link;.\APP\home;.\Public;.\APP\lcd;.\APP\ui;.\APP\sensor</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -457,6 +457,26 @@
         <Group>
           <GroupName>APP</GroupName>
           <Files>
+            <File>
+              <FileName>dht11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\sensor\dht11.c</FilePath>
+            </File>
+            <File>
+              <FileName>font_data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\ui\font_data.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\ui\ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>gfx.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\APP\ui\gfx.c</FilePath>
+            </File>
             <File>
               <FileName>lcd.c</FileName>
               <FileType>1</FileType>

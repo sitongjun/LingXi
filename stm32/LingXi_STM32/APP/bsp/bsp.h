@@ -17,6 +17,7 @@ enum { KEY_NONE = 0, KEY_UP = 1, KEY_1 = 2, KEY_2 = 4, KEY_3 = 8 };
 
 void bsp_init(void);
 u32  millis(void);
+u32  micros(void);                /* 微秒时间戳（基于 TIM2） */
 u8   bsp_key_scan(void);          /* 返回本次新按下的按键位图，需每 10ms 左右调用 */
 
 #endif

@@ -11,7 +11,7 @@
  *   CRC16-CCITT(poly 0x1021, init 0xFFFF)，范围：LEN_L .. PAYLOAD 末尾
  *   应答帧 CMD = 请求 CMD | 0x80，SEQ 与请求相同
  */
-#define LINK_MAX_PAYLOAD   1024
+#define LINK_MAX_PAYLOAD   2048
 
 enum {
 	CMD_PING      = 0x01,   /* -> PONG: uptime_ms(u32 LE)                         */
