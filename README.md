@@ -43,4 +43,4 @@ D:\keil5\UV4\UV4.exe -b stm32\LingXi_STM32\Template.uvprojx
 python tools\stm32_isp.py COM7 flash stm32\LingXi_STM32\Obj\Template.hex
 ```
 
-STM32 源文件为 GBK 编码（Keil 默认），仓库中以 UTF-8 存储，检出时自动转换（见 `.gitattributes`）。
+STM32 源文件为 UTF-8 编码，用 Keil 打开前请设置 Edit → Configuration → Editor → Encoding 为 UTF-8。

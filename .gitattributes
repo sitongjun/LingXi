@@ -1,4 +1,4 @@
-# Keil 工程源码在工作区使用 GBK + CRLF，仓库内存为 UTF-8，GitHub 上中文注释可正常显示
-stm32/**/*.c text working-tree-encoding=GBK eol=crlf
-stm32/**/*.h text working-tree-encoding=GBK eol=crlf
-stm32/**/*.s text working-tree-encoding=GBK eol=crlf
+# Keil 工程源码统一使用 UTF-8（Keil: Edit -> Configuration -> Editor -> Encoding 选 UTF-8）
+stm32/**/*.c text eol=crlf
+stm32/**/*.h text eol=crlf
+stm32/**/*.s text eol=crlf
